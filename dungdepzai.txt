@@ -2796,7 +2796,7 @@ local WeaponList = {"Melee","Sword","Fruit","Gun"}
 _G.SelectWeapon = "Melee"
 M:AddDropdown({
     Name = "Chọn vũ khí",
-    Default = "",
+    Default = "Melee",
     Options = WeaponList,
     Flag = "Select Weapon",
     Save = true,
@@ -5019,49 +5019,32 @@ RA:AddButton({
 })
 
 RA:AddToggle({
-    Name = "Tự động Vào Raid",
-    Default = false,
-    Flag = "Tự động Start",
-    Save = true,
-    Callback = function(Value)
-        _G.Auto_StartRaid = Value
-    end    
-})
-
-
-local Section = RA:AddSection({
-    Name = "Raid Menu"
-})
-
-RA:AddToggle({
-    Name = "Kill Quái",
-    Default = false,
-    Flag = "Tự động KillAura",
-    Save = true,
-    Callback = function(Value)
-        _G.Kill_Aura = Value
-    end    
-})
-
-    RA:AddToggle({
-        Name = "Qua đảo",
-        Default = false,
-        Flag = "Tự động NextIsland",
-        Save = true,
-        Callback = function(Value)
-            _G.Auto_Dungeon = Value
-            StopTween(_G.Auto_Dungeon)
-        end    
-    })
-
-RA:AddToggle({
-    Name = "Tự động skill v2",
+    Name = "Tự động raid",
     Default = false,
     Flag = "Tự động Awakener",
     Save = true,
     Callback = function(Value)
         _G.Auto_Awakener = Value
     end    
+
+    Default = true,
+    Flag = "Tự động NextIsland",
+    Save = true,
+    Callback = function(Value)
+        _G.Auto_Dungeon = Value
+        StopTween(_G.Auto_Dungeon)
+    Default = true,
+    Flag = "Tự động Start",
+    Save = true,
+    Callback = function(Value)
+        _G.Auto_StartRaid = Value
+            
+    end    
+})
+
+
+local Section = RA:AddSection({
+    Name = "Raid Menu"
 })
 
 local Section = RA:AddSection({
@@ -11498,7 +11481,7 @@ spawn(function()
             if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" or game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
                 wait(2.0)
                 OrionLib:MakeNotification({
-                    Name = "Tên Script",
+                    Name = "Dungdepzai",
                     Content = "Turn Off Hop Find Moon Please",
                     Image = "rbxassetid://4483345998",
                     Time = 5
@@ -11506,7 +11489,7 @@ spawn(function()
             elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
                 Hop()
                 OrionLib:MakeNotification({
-                    Name = "Tên Script",
+                    Name = "Dungdepzai",
                     Content = "Hop Server",
                     Image = "rbxassetid://4483345998",
                     Time = 5
@@ -11514,7 +11497,7 @@ spawn(function()
             elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
                 Hop()
                 OrionLib:MakeNotification({
-                    Name = "Tên Script",
+                    Name = "Dungdepzai",
                     Content = "Hop Server",
                     Image = "rbxassetid://4483345998",
                     Time = 5
@@ -11522,7 +11505,7 @@ spawn(function()
             elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
                 Hop()
                 OrionLib:MakeNotification({
-                    Name = "Tên Script",
+                    Name = "Dungdepzai",
                     Content = "Hop Server",
                     Image = "rbxassetid://4483345998",
                     Time = 5
