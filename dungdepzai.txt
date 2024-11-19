@@ -3481,7 +3481,7 @@ spawn(function()
     end)
 end)
 
-    _G.FastAttackDelay = 0.2
+    _G.FastAttackDelay = 0.02
            
 local Section = M:AddSection({
     Name = "Bypass Teleport"
